@@ -7,6 +7,6 @@ clean:
 .PHONY: clean
 
 build:
-	if [ ! -d $(BUILD_DIR) ]; then mkdir $(BUILD_DIR); fi
-	cd $(BUILD_DIR) && cmake .. && $(MAKE)
+	cmake -B $(BUILD_DIR)
+	cd $(BUILD_DIR) && cmake --build .
 .PHONY: build
