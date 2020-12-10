@@ -1,1 +1,2 @@
+add_subdirectory(avg_temperature)
 add_subdirectory(matrix_sum)
