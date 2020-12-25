@@ -1,4 +1,4 @@
-all: clean build
+all: build
 
 BUILD_DIR = build
 
@@ -10,3 +10,7 @@ build:
 	cmake -B $(BUILD_DIR)
 	cd $(BUILD_DIR) && cmake --build .
 .PHONY: build
+
+test: build
+	cd $(BUILD_DIR) && ctest
+.PHONY: test
