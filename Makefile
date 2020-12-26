@@ -12,5 +12,5 @@ build:
 .PHONY: build
 
 test: build
-	cd $(BUILD_DIR) && ctest
+	cd $(BUILD_DIR) && ctest --output-on-failure
 .PHONY: test
