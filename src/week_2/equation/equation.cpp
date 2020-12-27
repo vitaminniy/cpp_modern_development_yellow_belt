@@ -101,7 +101,7 @@ int GetDistinctRealRootCount(double a, double b, double c) {
   if (d == 0)
     return 1;
   return 2;
-};
+}
 
 void TestLinear() {
   const auto roots = GetDistinctRealRootCount(0, 2, 4);
