@@ -63,6 +63,7 @@ void AssertEqual(const T &t, const U &u, const std::string &hint = {}) {
 }
 
 void Assert(bool b, const std::string &hint);
+void AssertFalse(const std::string& hint = {});
 
 class TestRunner {
 public:
@@ -70,6 +71,20 @@ public:
   void RunTest(TestFunc func, const std::string &test_name) {
     try {
       func();
+      std::cerr << test_name << " OK" << std::endl;
+    } catch (std::exception &e) {
+      ++fail_count;
+      std::cerr << test_name << " fail: " << e.what() << std::endl;
+    } catch (...) {
+      ++fail_count;
+      std::cerr << "Unknown exception caught" << std::endl;
+    }
+  }
+
+  template<class TestFunc, class _Tparam>
+  void RunTest(TestFunc func, _Tparam param, const std::string& test_name) {
+    try {
+      func(param);
       std::cerr << test_name << " OK" << std::endl;
     } catch (std::exception &e) {
       ++fail_count;
