@@ -7,3 +7,10 @@ Code for C++ Modern Development "Yellow Belt" Coursera [course](https://www.cour
 ```bash
 make
 ```
+
+## Test
+
+```bash
+make test
+```
+
