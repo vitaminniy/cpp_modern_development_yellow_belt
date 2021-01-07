@@ -14,4 +14,4 @@ int main() {
   runner.RunTest(TestMergeSort, "TestMergeSort");
 
   return 0;
-};
+}
