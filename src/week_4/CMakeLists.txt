@@ -1,5 +1,6 @@
 enable_testing()
 
+add_subdirectory(permutation)
 add_subdirectory(remove_duplicates)
 add_subdirectory(set_part)
 add_subdirectory(split_words)
