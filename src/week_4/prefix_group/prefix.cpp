@@ -15,8 +15,5 @@ std::pair<RandomIt, RandomIt> FindStartsWith(RandomIt begin, RandomIt end,
 template <typename RandomIt>
 std::pair<RandomIt, RandomIt> FindStartsWith(RandomIt begin, RandomIt end,
                                              char prefix) {
-  return {
-      std::lower_bound(begin, end, std::string{prefix}),
-      std::upper_bound(begin, end, std::string{static_cast<char>(prefix + 1)}),
-  };
+  return FindStartsWith(begin, end, std::string{prefix});
 }
