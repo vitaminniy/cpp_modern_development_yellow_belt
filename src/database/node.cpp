@@ -15,6 +15,7 @@ bool LogicalOperationNode::Evaluate(const Date &date,
   case LogicalOperation::And:
     return left_->Evaluate(date, event) && right_->Evaluate(date, event);
   }
+  return false;
 }
 
 DateComparisonNode::DateComparisonNode(Comparison cmp, const Date &date)
@@ -36,6 +37,7 @@ bool DateComparisonNode::Evaluate(const Date &date,
   case Comparison::GreaterOrEqual:
     return date >= date_;
   }
+  return false;
 }
 
 EventComparisonNode::EventComparisonNode(Comparison cmp,
@@ -58,4 +60,5 @@ bool EventComparisonNode::Evaluate(const Date & /*date*/,
   case Comparison::GreaterOrEqual:
     return event >= event_;
   }
+  return false;
 }
